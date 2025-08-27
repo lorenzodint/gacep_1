@@ -1,5 +1,5 @@
 from typing import Any, List, Optional, get_origin, get_args, Union
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, EmailStr
 from pydantic.fields import FieldInfo
 from mysql.connector import Error, MySQLConnection
 from mysql.connector.cursor import MySQLCursor
@@ -49,7 +49,7 @@ def _mappa_tipo_pydantic_a_mysql(field_type: Any, field_info: FieldInfo) -> str:
         return "DATETIME"
     elif issubclass(field_type, date):
         return "DATE"
-    elif issubclass(field_type, str):
+    elif field_type is EmailStr or issubclass(field_type, str):
         max_length = getattr(field_info, 'max_length', None)
         return f"VARCHAR({max_length or 191})"
     else:
@@ -190,4 +190,3 @@ def sincronizza_tabella(model: type[BaseModel], table_name: str, unique_fields:O
             logger.info(f"Chiusura della connessione al database")
             cursor.close()
             connection.close()
-
