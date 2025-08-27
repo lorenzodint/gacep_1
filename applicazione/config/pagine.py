@@ -26,4 +26,5 @@ class PaginePerRuolo:
         elif ruolo == Ruolo.UTENTE:
             return [Pagine.HOME]
         else:
-            return [Pagine.HOME, Pagine.ALTRO, Pagine.PROVA, Pagine.TEST_1]
+            return [Pagine.HOME]
+
