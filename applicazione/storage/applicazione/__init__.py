@@ -1,1 +1,0 @@
-from .classApp import App
