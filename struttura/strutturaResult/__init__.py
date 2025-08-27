@@ -1,1 +1,0 @@
-from .classResult import Result, display_errore
