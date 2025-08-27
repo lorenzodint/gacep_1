@@ -28,10 +28,12 @@ def _mappa_tipo_pydantic_a_mysql(field_type: Any, field_info: FieldInfo) -> str:
             origin = get_origin(field_type)
         else:
 
-            return 'JSON'
+            # return 'JSON'
+            return 'TEXT'
 
     if origin in (List, list) or (inspect.isclass(field_type) and issubclass(field_type, BaseModel)):
-        return 'JSON'
+        # return 'JSON'
+        return 'TEXT'
     elif not inspect.isclass(field_type):
         return 'TEXT'
     elif issubclass(field_type, Enum):
