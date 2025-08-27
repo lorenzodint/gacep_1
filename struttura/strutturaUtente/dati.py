@@ -26,10 +26,10 @@ class Servizio(str, Enum):
 
 
 class DatiUtenteModel(BaseModel):
-    uuid: str = Field(default_factory= lambda: str(uuid.uuid4()))
+    uuid: str = Field(default_factory= lambda: str(uuid.uuid4()), max_length=100)
     username: str = Field(..., min_length=3, max_length=30)
     codice_fiscale: Optional[str] = Field(default=None, min_length=16, max_length=16)
-    email: EmailStr
+    email: EmailStr = Field(..., max_length=100)
     password: str = Field(...,)
     nome: Optional[str] = Field(default=None)
     cognome: Optional[str] = Field(default=None)
@@ -40,7 +40,7 @@ class DatiUtenteModel(BaseModel):
     provincia: Optional[str] = Field(default=None)
     nazione: Optional[str] = Field(default=None)
     data_nascita: Optional[date] = Field(default=None)
-    telefono: Optional[str] = Field(default=None)
+    telefono: Optional[str] = Field(default=None, max_length=100)
     sesso: Sesso = Field(default=Sesso.X)
     ruolo: Ruolo = Field(default=Ruolo.GUEST)
     data_registrazione: datetime = Field(default_factory=datetime.now)
