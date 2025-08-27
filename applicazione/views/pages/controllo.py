@@ -18,8 +18,8 @@ key = SessionKeys()
 
 
 
-FILE_C1 = percorsi.get_storage() + 'test_c1.txt'
-FILE_C2 = percorsi.get_storage() + 'test_c2.txt'
+FILE_C1 = percorsi.get_storage() + 'file_c1.txt'
+FILE_C2 = percorsi.get_storage() + 'file_c2.txt'
 FILE_C3 = percorsi.get_storage() + 'file_c3.txt'
 
 # @st.cache_data
@@ -265,5 +265,5 @@ def show():
         with tab_2:
             tab_file_c2()
 
-        with tab_3:
-            tab_file_c3()
+        # with tab_3:
+        #     tab_file_c3()
