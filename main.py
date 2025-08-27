@@ -48,7 +48,7 @@ def db_config():
         DatiUtenteModel,
     ]
     tabelle = [
-        'utenti',
+        'streamlit_utenti',
     ]
 
     campi_unici = [
