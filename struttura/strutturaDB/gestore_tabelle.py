@@ -51,7 +51,7 @@ def _mappa_tipo_pydantic_a_mysql(field_type: Any, field_info: FieldInfo) -> str:
         return "DATE"
     elif issubclass(field_type, str):
         max_length = getattr(field_info, 'max_length', None)
-        return f"VARCHAR({max_length or 255})"
+        return f"VARCHAR({max_length or 191})"
     else:
          return "TEXT"
 def _get_colonne_esistenti(cursor: MySQLCursor, table_name: str) -> Result:
@@ -190,3 +190,4 @@ def sincronizza_tabella(model: type[BaseModel], table_name: str, unique_fields:O
             logger.info(f"Chiusura della connessione al database")
             cursor.close()
             connection.close()
+
