@@ -119,4 +119,3 @@ def show():
     # if controllo:
     #     session_manager.set(SessionKeys.key_current_page(), Pagine.CONTROLLO)
     #     st.rerun()
-

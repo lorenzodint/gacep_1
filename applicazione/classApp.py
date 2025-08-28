@@ -117,4 +117,3 @@ class App:
                 st.rerun()
 
         # st.write(self.session_manager.session)
-

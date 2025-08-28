@@ -13,11 +13,11 @@ session_manager.initialize_state()
 def check_input(username, password):
     if username is None or username == '':
         risultato = Result.failure('Inserire un Username o una Email', info='')
-        display_errore(risultato, show_avviso=False)
+        display_errore(risultato)
         return
     if password is None or password == '':
         risultato = Result.failure('Inserire una Password', info='')
-        display_errore(risultato, show_avviso=False)
+        display_errore(risultato)
         return
     return
 

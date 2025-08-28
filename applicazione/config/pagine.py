@@ -10,6 +10,7 @@ class Pagine(Enum):
     PROVA = 'prova'
     TEST_1 = 'test_1'
     CONTROLLO = 'controllo'
+    FORK = 'fork'
 
 
     def get_pages(cls):
@@ -20,7 +21,7 @@ class PaginePerRuolo:
     @staticmethod
     def get_pagine(ruolo: Ruolo):
         if ruolo == Ruolo.SUPERADMIN:
-            return [Pagine.HOME, Pagine.REGISTER]
+            return [Pagine.HOME, Pagine.REGISTER, Pagine.FORK]
         elif ruolo == Ruolo.ADMIN:
             return [Pagine.HOME]
         elif ruolo == Ruolo.UTENTE:

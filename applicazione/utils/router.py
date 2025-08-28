@@ -80,6 +80,8 @@ class Router:
                 page.test_1.show()
             elif current_page == Pagine.CONTROLLO:
                 page.controllo.show()
+            elif current_page == Pagine.FORK:
+                page.fork.show()
 
 
 
