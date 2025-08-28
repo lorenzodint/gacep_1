@@ -90,12 +90,13 @@ def show():
             with st.spinner('Salvataggio dei file...'):
                 try:
                     session_manager.start_loading()
-                    storage_path = Path('applicazione/storage/')
-                    storage_path.mkdir(parents=True, exist_ok=True)
+                    with st.spinner('Caricamento e salvataggio dei file...'):
+                        storage_path = Path('applicazione/storage/')
+                        storage_path.mkdir(parents=True, exist_ok=True)
 
-                    (storage_path / 'file_c1.txt').write_bytes(file_c1.getvalue())
-                    (storage_path / 'file_c2.txt').write_bytes(file_c2.getvalue())
-                    # (storage_path / 'file_c3.txt').write_bytes(file_c3.getvalue())
+                        (storage_path / 'file_c1.txt').write_bytes(file_c1.getvalue())
+                        (storage_path / 'file_c2.txt').write_bytes(file_c2.getvalue())
+                        # (storage_path / 'file_c3.txt').write_bytes(file_c3.getvalue())
 
                     st.toast('File caricati e salvati correttamente', icon=":material/check_box:")
 
@@ -118,3 +119,4 @@ def show():
     # if controllo:
     #     session_manager.set(SessionKeys.key_current_page(), Pagine.CONTROLLO)
     #     st.rerun()
+
