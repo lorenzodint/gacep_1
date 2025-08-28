@@ -17,7 +17,6 @@ class App:
 
         self.primary_color = st.get_option("theme.primaryColor")
         self.overlay_color = "rgba(255,255,255,0.5)" if st.get_option("theme.base") == "light" else "rgba(0,0,0,0.5)"
-        print(self.overlay_color)
 
         st.set_page_config(
             layout="wide"
@@ -68,7 +67,6 @@ class App:
         </div>
         """
 
-        print(self.overlay_css)
 
     def run(self):
         if self.is_loading:
@@ -119,3 +117,4 @@ class App:
                 st.rerun()
 
         # st.write(self.session_manager.session)
+
