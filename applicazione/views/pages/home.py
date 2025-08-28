@@ -85,11 +85,12 @@ def show():
         # controllo = st.button('controllo')
 
     if procedi_button:
+        session_manager.start_loading()
+        
         # if check_file(file_c1, file_c2, file_c3):
         if check_file(file_c1, file_c2):
             with st.spinner('Salvataggio dei file...'):
                 try:
-                    session_manager.start_loading()
                     with st.spinner('Caricamento e salvataggio dei file...'):
                         storage_path = Path('applicazione/storage/')
                         storage_path.mkdir(parents=True, exist_ok=True)
@@ -119,3 +120,4 @@ def show():
     # if controllo:
     #     session_manager.set(SessionKeys.key_current_page(), Pagine.CONTROLLO)
     #     st.rerun()
+
