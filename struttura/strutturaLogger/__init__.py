@@ -1,1 +1,0 @@
-from .classLog import crea_log
