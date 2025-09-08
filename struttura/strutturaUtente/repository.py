@@ -11,7 +11,7 @@ logger = crea_log()
 
 class UtenteRepository:
 
-    def __init__(self, table_name:str = 'utenti'):
+    def __init__(self, table_name:str = 'streamlit_utenti'):
         self.table_name = table_name
 
 
