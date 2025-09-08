@@ -86,7 +86,7 @@ def test_creazione_utente():
 
 def main():
     # genera_requirements()
-    # db_config()
+    db_config()
 
     app = App()
     app.run()
